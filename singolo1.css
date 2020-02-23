@@ -90,15 +90,12 @@ a {
   color: inherit; 
 }
 
-body {
-  font-size: 12px;
-  background-color: #F2F2F2;
-}
-
 .container {
   margin: 0 auto;
   max-width: 1020px;
   width: 100%;
+  font-size: 12px;
+  background-color: #F2F2F2;  
 }
 
 .header {
@@ -129,10 +126,32 @@ body {
 .header-logo__title {
   color: #FFFFFF;
 }
+
 .header-logo__title span {
   color: #F06C64;
 }
 
+.header-logo:hover .header-logo__title {
+  color: #F06C64;
+  transition: all 0.4s ease-out;
+}
+
+.header-logo:hover .header-logo__title span {
+  color: #FFFFFF;
+  transition: all 0.4s ease-out;
+}
+
+.header-logo:active .header-logo__title {
+  color: #F06C64;
+  transition: all 0.4s ease-out;
+  transform: scale(0.9);
+}
+
+.header-logo:active .header-logo__title span {
+  color: #FFFFFF;
+  transition: all 0.4s ease-out;
+  transform: scale(0.9);
+}
 
 .header-navigation__list {
   width: 371px;
@@ -140,6 +159,7 @@ body {
   font-family: 'Lato Bold', Arial, sans-serif;
   display: flex;
   justify-content: space-between;
+  transform: scale(1);
 }
 
 .header-navigation__item--dot {
@@ -149,6 +169,16 @@ body {
 
 .header-navigation__item {
   color: #FFFFFF;
+}
+
+.header-navigation__item:hover {
+  transform: scale(1.2);
+  transition: all 0.9s ease-out;
+}
+
+.header-navigation__item:active {
+  transform: scale(0.7);
+  transition: all 0.9s ease-out;
 }
 
 .header-navigation__item--selected {
@@ -168,6 +198,23 @@ body {
   align-items: center;
 }
 
+.slider-arrow-left,
+.slider-arrow-right {
+  transform: scale(1);
+}
+
+.slider-arrow-left:hover,
+.slider-arrow-right:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-out;
+}
+
+.slider-arrow-left:active,
+.slider-arrow-right:active {
+  transform: scale(0.8);
+  transition: all 0.2s ease-out;
+}
+
 .slider-content {
   margin-top: -6px;
   min-width: 797px;
@@ -183,7 +230,7 @@ body {
 }
 
 .services {
-  padding: 70px 40px 37px 40px;
+  padding: 68px 40px 37px 40px;
   max-height: 600px;
   border-bottom: solid 6px #FFFFFF;
 }
@@ -206,7 +253,7 @@ body {
 }
 
 .services-icons {
-  padding-top: 43px;
+  padding-top: 41px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
