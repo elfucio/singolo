@@ -218,31 +218,36 @@ a {
   width: 300px;
 }
 .about-us-people__item__userpic {
-  margin-bottom: 19px;
+  margin-bottom: 13px;
 }
 .about-us-people__item__name {
+  overflow: hidden;
   color: #666d89;
   font-family: 'Lato Black', Arial, sans-serif;
   font-size: 18px;
-  line-height: 8.86px;
-  letter-spacing: 0px;
-  margin-bottom: 17px;
+  letter-spacing: -0.1px;
+  margin-bottom: 9px;
 }
 .about-us-people__item__text {
   font-family: 'Lato Regular', Arial, sans-serif;
   color: #767e9e;
   font-size: 12px;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 20px;
   letter-spacing: 0px;
   margin-bottom: 25px;
 }
 .about-us-people__item__social {
-  padding: 1px;
-  width: 155px;
+  height: 32px;
+  width: 152px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.about-us-people__item__social__links a {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 .about-us-people__item__social__links img:hover {
   background-color: #B2C1F0;
