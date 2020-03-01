@@ -101,7 +101,7 @@ a {
 .portfolio {
   background-color: #2d303a;
   padding: 67px 40px 67px 40px;
-  max-height: 1200px;
+  overflow: hidden;
   border-bottom: solid 6px #323746;
 }
 
@@ -177,6 +177,8 @@ a {
 }
 
 .portfolio-examples {
+  overflow: hidden;
+  height: 601px;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 20px;
@@ -184,4 +186,69 @@ a {
 .portfolio-examples__photo {
   display: block;
   grid-area: 1 / 1 / 1 / 1;
+}
+
+.about-us {
+  padding: 66px 40px 67px 40px;
+  border-bottom: solid 6px #FFFFFF;
+}
+
+.about-us__title {
+  font-family: 'Lato Black', Arial, sans-serif;
+  font-size: 30px;
+  line-height: 25.86px; 
+  color: #666D89;
+  letter-spacing: -0.5px;
+}
+.about-us__text {
+  padding-top: 22px;
+  font-family: 'Lato Light', Arial, sans-serif;
+  color: #767e9e;
+  font-size: 18px;
+  letter-spacing: -0.21px;
+  line-height: 31px;
+  text-align: justify;
+}
+.about-us-people {
+  margin-top: 43px;
+  display: flex;
+  justify-content: space-between;
+}
+.about-us-people__item {
+  width: 300px;
+}
+.about-us-people__item__userpic {
+  margin-bottom: 19px;
+}
+.about-us-people__item__name {
+  color: #666d89;
+  font-family: 'Lato Black', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 8.86px;
+  letter-spacing: 0px;
+  margin-bottom: 17px;
+}
+.about-us-people__item__text {
+  font-family: 'Lato Regular', Arial, sans-serif;
+  color: #767e9e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  margin-bottom: 25px;
+}
+.about-us-people__item__social {
+  padding: 1px;
+  width: 155px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.about-us-people__item__social__links img:hover {
+  background-color: #B2C1F0;
+  border-radius: 50%;
+}
+.about-us-people__item__social__links img:active {
+  filter: saturate(250%);
+  border-radius: 50%;
 }
