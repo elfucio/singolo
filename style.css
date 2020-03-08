@@ -188,7 +188,7 @@ a {
 
 .slider {
   padding: 0 40px;
-  max-height: 600px;
+  height: 600px;
   background-color: #F06C64;
   border-bottom: solid 6px #EA676B;
 }
@@ -232,8 +232,8 @@ a {
 }
 
 .services {
-  padding: 68px 40px 28px 40px;
-  max-height: 600px;
+  padding: 68px 40px 28px 41px;
+  height: 500px;
   border-bottom: solid 6px #FFFFFF;
 }
 
@@ -250,12 +250,12 @@ a {
   font-family: 'Lato Light', Arial, sans-serif;
   font-size: 17px;
   letter-spacing: 0.2px;
-  line-height: 32px;
+  line-height: 31px;
   text-align: justify;
 }
 
 .services-icons {
-  padding-top: 43px;
+  padding-top: 45px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -292,14 +292,15 @@ a {
   padding-top: 10px;
   font-family: 'Lato Regular', Arial, sans-serif;
   font-size: 12px;
-	line-height: 22px;
+	line-height: 21px;
 	letter-spacing: -0.1px;
   text-align: justify;
 }
 
 .portfolio {
+  height: 870px;
 	background-color: #2d303a;
-	padding: 66px 40px 67px 39px;
+	padding: 66px 40px 67px 40px;
 	overflow: hidden;
 	border-bottom: solid 6px #323746;
 }
@@ -326,10 +327,11 @@ a {
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-self: center;
-	margin-top: 9px;
+	margin-top: 10px;
 }
+
 .portfolio-nav__button {
-	height: 22px;
+	height: 21px;
 	display: block;
 	border: 1px solid #c5c5c5;
 	border-radius: 5px;
@@ -388,6 +390,7 @@ a {
 }
 
 .about-us {
+  height: 733px;
 	padding: 66px 40px 67px 40px;
 	border-bottom: solid 6px #FFFFFF;
 }
@@ -414,7 +417,7 @@ a {
 	justify-content: space-between;
 }
 .about-us-people__item {
-	width: 301px;
+	width: 300px;
 }
 .about-us-people__item__userpic {
 	margin-bottom: 13px;
@@ -434,11 +437,11 @@ a {
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.2px;
-  margin-bottom: 22px;
+  margin-bottom: 23px;
 }
 .about-us-people__item__social {
-	height: 32px;
-	width: 152px;
+	height: 33px;
+	width: 153px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -458,8 +461,9 @@ a {
 }
 
 .contact {
+  height: 655px;
   background-color: #F06C64;
-  padding: 67px 40px 13px 39px;
+  padding: 68px 40px 13px 39px;
   border-bottom: solid 6px #EA676B;
 }
 
@@ -467,19 +471,19 @@ a {
   display: flex;
   flex-direction: row;
 	justify-content: space-between;
-	padding-top: 1px;
+	padding-top: 3px;
 }
 
 .contact__title {
   font-family: 'Lato Black', Arial, sans-serif;
-  line-height: 24.86px; 
+  line-height: 22px; 
   color: #f0d8d9;
   font-size: 30px;
   letter-spacing: -0.6px;
 }
 
 .contact__text {
-  padding-top: 24px;
+  padding-top: 25px;
   font-family: 'Lato Light', Arial, sans-serif;
   letter-spacing: -0.21px;
   text-align: justify;
@@ -565,7 +569,7 @@ a {
 .contact-info-wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 41px;
   padding-left: 20px;
 }
 
@@ -582,7 +586,7 @@ a {
   letter-spacing: -0.15px;
   color: #f0d8d9;
   font-size: 12px;
-  line-height: 22px;
+  line-height: 21.5px;
   text-align: justify;
 }
 
@@ -635,8 +639,9 @@ a {
 }
 
 .footer { 
+  height: 77px;
   background-color: #2D303A;
-  padding: 23px 40px 21px 40px;
+  padding: 21px 40px 21px 40px;
   display: flex;
   justify-content: space-between;
   align-content: center;
