@@ -428,13 +428,13 @@ a {
 	margin-bottom: 9px;
 }
 .about-us-people__item__text {
-	font-family: 'Lato Bold', Arial, sans-serif;
-	color: #767e9e;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 20px;
-	letter-spacing: -0.27px;
-	margin-bottom: 24px;
+  font-family: 'Lato Bold', Arial, sans-serif;
+  color: #767e9e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.2px;
+  margin-bottom: 22px;
 }
 .about-us-people__item__social {
 	height: 32px;
@@ -577,7 +577,7 @@ a {
 }
 
 .contact-info__text {
-  padding-top: 6px;
+  padding-top: 7px;
   font-family: 'Lato Regular', Arial, sans-serif;
   letter-spacing: -0.15px;
   color: #f0d8d9;
