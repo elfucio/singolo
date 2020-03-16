@@ -267,9 +267,14 @@ a {
 
 .slider-content__item {
   margin: 0 auto;
+  cursor: pointer;
 }
 
-.slider-content__img--dark {
+.slider-content__img {
+  cursor: pointer;
+}
+
+.hide {
   display: none;
 }
 
