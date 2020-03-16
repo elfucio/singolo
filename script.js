@@ -2,7 +2,7 @@
 
 window.addEventListener('scroll', function() {
 	document.querySelector('.header').classList.add('header--sticky');
-	if (header.offsetTop > 95) {
+	if (header.offsetTop > 0) {
 		document.querySelector('.header').classList.add('header--sticky');
 	} else {
 		document.querySelector('.header').classList.remove('header--sticky');
@@ -11,66 +11,57 @@ window.addEventListener('scroll', function() {
 
 // active menu links
 
-const MENU = document.querySelector('.header');
+const MENU = document.querySelector('header');
 
 MENU.addEventListener('click', (event) => {
 	MENU.querySelectorAll('.header-navigation__item__link').forEach(el => el.classList.remove('header-navigation__item--selected'));
 	event.target.classList.add('header-navigation__item--selected');
 });
 
-// slider
+// change slides
 
-let items = document.querySelectorAll('.slider-content');
-let currentItem = 0;
-let isEnabled = true;
+const sliderItems = document.querySelectorAll('.slider-content');
+let currentItem = 1;
+
+const sliderArrows = document.querySelectorAll('.slider-arrows');
+const next = document.getElementById('slider-arrow-right');
+const previous = document.getElementById('slider-arrow-left');
+
+function previousItem() {
+	changeCurrentItem(currentItem - 1);
+}
+
+function nextItem() {
+	changeCurrentItem(currentItem + 1);
+}
+
+next.addEventListener('click', function() {
+	nextItem();
+	changeBackground();
+});
+
+previous.addEventListener('click', function() {
+	previousItem();
+	changeBackground();
+});
 
 function changeCurrentItem(n) {
-	currentItem = (n + items.length) % items.length;
+	sliderItems[currentItem].classList = 'slider-content';
+    currentItem = (n + sliderItems.length) % sliderItems.length;
+    sliderItems[currentItem].classList = 'slider-content--show';
 }
 
-function hideItem(direction) {
-	isEnabled = false;
-	items[currentItem].classList.add(direction);
-	items[currentItem].addEventListener('animationend', function() {
-		this.classList.remove('active', direction);
-	});
-}
+// change slider background
 
-function showItem(direction) {
-	items[currentItem].classList.add('next', direction);
-	items[currentItem].addEventListener('animationend', function() {
-		this.classList.remove('next', direction);
-		this.classList.remove('active');
-		isEnabled = true;
-	});
-}
-
-function previousItem(n) {
-	hideItem('to-right');
-	changeCurrentItem(n - 1);
-	showItem('from-left');
-}
-
-function nextItem(n) {
-	hideItem('to-left');
-	changeCurrentItem(n + 1);
-	showItem('from-right');
-}
-
-document.querySelector('.slider-arrow-left').addEventListener('click', function() {
-	if(isEnabled) {
-		previousItem(currentItem);
+function changeBackground() {
+	if (slider.classList.contains('bg-red')) {
+		slider.classList.remove('bg-red');
+		slider.classList.add('bg-blue');
+	} else if (slider.classList.contains('bg-blue')){
+		slider.classList.remove('bg-blue');
+		slider.classList.add('bg-red');
 	}
-});
-
-document.querySelector('.slider-arrow-right').addEventListener('click', function() {
-	if(isEnabled) {
-		nextItem(currentItem);
-	}
-});
-
-
-
+}
 
 // portfolio active images
 
