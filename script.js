@@ -63,6 +63,50 @@ function changeBackground() {
 	}
 }
 
+// let verticalPhoneImage = document.querySelector('#slider-content__item--vertical');
+// let horizontalPhoneImage = document.querySelector('#slider-content__item--horizontal');
+// let vPhoneImageItems = verticalPhoneImage.querySelectorAll('.vertical');
+// let hPhoneImageItems = horizontalPhoneImage.querySelectorAll('.horizontal');
+
+// verticalPhoneImage.addEventListener('click', function () {	
+// 	changeScreen(vPhoneImageItems);
+// });
+
+// horizontalPhoneImage.addEventListener('click', function () {	
+// 	changeScreen(hPhoneImageItems);
+// });
+
+// function changeScreen(items) {
+// 	for (let i = 0; i < items.length;) {
+// 		items[i].classList.remove('hide');
+// 		event.target.classList.add('hide');
+// 		i++;
+// 	}
+// }
+
+// darken phone screens
+
+const SWITCH_VERTICAL = document.querySelector('#slider-content__item--vertical');
+
+SWITCH_VERTICAL.addEventListener('click', (event) => {
+	SWITCH_VERTICAL.querySelectorAll('.slider-content__img').forEach(el => el.classList.remove('hide'));
+	event.target.classList.add('hide');
+});
+
+const SWITCH_HORIZONTAL = document.querySelector('#slider-content__item--horizontal');
+
+SWITCH_HORIZONTAL.addEventListener('click', (event) => {
+	SWITCH_HORIZONTAL.querySelectorAll('.slider-content__img').forEach(el => el.classList.remove('hide'));
+	event.target.classList.add('hide');
+});
+
+const SWITCH_MULTI = document.querySelector('#slider-content__item--multi');
+
+SWITCH_MULTI.addEventListener('click', (event) => {
+	SWITCH_MULTI.querySelectorAll('.slider-content__img').forEach(el => el.classList.remove('hide'));
+	event.target.classList.add('hide');
+});
+
 // portfolio active images
 
 const GALLERY = document.querySelector('.portfolio-examples');
