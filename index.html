@@ -33,27 +33,29 @@
 			<section id="slider" class="slider bg-red">
 				<div class="slider-wrapper">
 					<div class="slider-arrows">
-						<a href="#" class="slider-arrow-left">
+						<a href="#" id="slider-arrow-left" class="slider-arrow-left">
 							<img src="assets/images/arrow-left.png" alt="arrow left" width="16" height="27">
 						</a>
-						<a href="#" class="slider-arrow-right">
+						<a href="#" id="slider-arrow-right" class="slider-arrow-right">
 							<img src="assets/images/arrow-right.png" alt="arrow right" width="16" height="27">
 						</a>
 					</div>
-						<div class="slider-content">
-							<div class="slider-content__item">
-								<img src="assets/images/phone-vertical.png" alt="phone vertical" width="240" height="483">
-							</div>
-							<div class="slider-content__item">
-								<img src="assets/images/phone-horizontal.png" alt="phone horizontal" width="484" height="240">
-							</div>
+					<div class="slider-content">
+						<div id="slider-content__item--vertical" class="slider-content__item">
+							<img class="slider-content__img" src="assets/images/phone-vertical.png" alt="phone vertical" width="240" height="483">
+							<img class="slider-content__img slider-content__img--dark hide" src="assets/images/phone-vertical-dark.png" alt="phone vertical" width="240" height="483">
 						</div>
-						<div class="slider-content hide">
-							<div class="slider-content__item">
-								<img src="assets/images/slider-2.png" alt="phone slider" width="517" height="513">
-							</div>
+						<div id="slider-content__item--horizontal" class="slider-content__item">
+							<img class="slider-content__img" src="assets/images/phone-horizontal.png" alt="phone horizontal" width="484" height="240">
+							<img class="slider-content__img slider-content__img--dark hide" src="assets/images/phone-horizontal-dark.png" alt="phone horizontal" width="484" height="240">
 						</div>
-
+					</div>
+					<div class="slider-content slider-content--show">
+						<div id="slider-content__item--multi" class="slider-content__item">
+							<img class="slider-content__img" src="assets/images/slider-2.png" alt="phone slider" width="517" height="513">
+							<img class="slider-content__img slider-content__img--dark hide" src="assets/images/slider-2-dark.png" alt="phone slider" width="517" height="513">
+						</div>
+					</div>
 				</div>				
 			</section>
 			<section id="services" class="services">
