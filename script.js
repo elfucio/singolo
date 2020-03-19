@@ -1,4 +1,4 @@
-// sticky header
+// ======================================================================================== sticky header
 
 window.addEventListener('scroll', function() {
 	if (header.offsetTop > 0) {
@@ -8,7 +8,7 @@ window.addEventListener('scroll', function() {
 	}
 });
 
-// active menu links
+// ======================================================================================== active menu links
 
 const MENU = document.querySelector('header');
 
@@ -50,7 +50,7 @@ function changeCurrentItem(n) {
     sliderItems[currentItem].classList = 'hide';
 }
 
-// change slider background
+// ======================================================================================== change slider background
 
 function changeBackground() {
 	if (slider.classList.contains('bg-red')) {
@@ -62,51 +62,42 @@ function changeBackground() {
 	}
 }
 
-// let verticalPhoneImage = document.querySelector('#slider-content__item--vertical');
-// let horizontalPhoneImage = document.querySelector('#slider-content__item--horizontal');
-// let vPhoneImageItems = verticalPhoneImage.querySelectorAll('.vertical');
-// let hPhoneImageItems = horizontalPhoneImage.querySelectorAll('.horizontal');
+// ======================================================================================== darken phone screens
 
-// verticalPhoneImage.addEventListener('click', function () {	
-// 	changeScreen(vPhoneImageItems);
-// });
+let verticalPhoneImage = document.querySelector('#vertical');
+let horizontalPhoneImage = document.querySelector('#horizontal');
+let multiPhoneImage = document.querySelector('#multi');
+let verticalPhoneItems = verticalPhoneImage.querySelectorAll('img');
+let horizontalPhoneItems = horizontalPhoneImage.querySelectorAll('img');
+let multiPhoneItems = multiPhoneImage.querySelectorAll('img');
 
-// horizontalPhoneImage.addEventListener('click', function () {	
-// 	changeScreen(hPhoneImageItems);
-// });
+verticalPhoneImage.addEventListener('click', function () {	
+	changeScreen(verticalPhoneItems);
+});
 
-// function changeScreen(items) {
-// 	for (let i = 0; i < items.length;) {
-// 		items[i].classList.remove('hide');
-// 		event.target.classList.add('hide');
-// 		i++;
-// 	}
-// }
+horizontalPhoneImage.addEventListener('click', function () {	
+	changeScreen(horizontalPhoneItems);
+});
 
-// darken phone screens
+multiPhoneImage.addEventListener('click', function () {	
+	changeScreen(multiPhoneItems);
+});
 
-// const SWITCH_VERTICAL = document.querySelector('#vertical');
+function changeScreen(items) {
+	if (items[0].classList.contains('hide')) {
+		items[0].classList.remove('hide');
+		items[0].classList.add('slider-content__img');
+		items[1].classList.remove('slider-content__img');
+		items[1].classList.add('hide');
+	} else if (items[1].classList.contains('hide')) {
+		items[1].classList.remove('hide');
+		items[1].classList.add('slider-content__img');
+		items[0].classList.remove('slider-content__img');
+		items[0].classList.add('hide');
+	}
+}
 
-// SWITCH_VERTICAL.addEventListener('click', (event) => {
-// 	SWITCH_VERTICAL.querySelectorAll('.slider-content__img').forEach(el => el.classList.remove('hide'));
-// 	event.target.classList.add('hide');
-// });
-
-// const SWITCH_HORIZONTAL = document.querySelector('#horizontal');
-
-// SWITCH_HORIZONTAL.addEventListener('click', (event) => {
-// 	SWITCH_HORIZONTAL.querySelectorAll('.slider-content__img').forEach(el => el.classList.remove('hide'));
-// 	event.target.classList.add('hide');
-// });
-
-// const SWITCH_MULTI = document.querySelector('#multi');
-
-// SWITCH_MULTI.addEventListener('click', (event) => {
-// 	SWITCH_MULTI.querySelectorAll('.slider-content__img').forEach(el => el.classList.remove('hide'));
-// 	event.target.classList.add('hide');
-// });
-
-// portfolio active images
+// ======================================================================================== portfolio active images
 
 const GALLERY = document.querySelector('.portfolio-examples');
 
@@ -124,14 +115,14 @@ SWITCH_GALLERY.addEventListener('click', (event) => {
 	shuffleImages(GALLERY_NODE);	
 });
 
-// portfolio click-to-change images
+// ======================================================================================== portfolio click-to-change images
 
 GALLERY.addEventListener('click', (event) => {
 	GALLERY.querySelectorAll('.portfolio-examples__photo').forEach(el => el.classList.remove('portfolio-examples__photo--selected'));
 	event.target.classList.add('portfolio-examples__photo--selected');
 });
 
-// portfolio shuffle images 
+// ======================================================================================== portfolio shuffle images 
 let GALLERY_NODE = document.querySelector('.portfolio-examples');
 
 function shuffleImages(GALLERY_NODE) {
