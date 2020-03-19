@@ -32,30 +32,25 @@
 		<main>
 			<section id="slider" class="slider bg-red">
 				<div class="slider-wrapper">
-					<div class="slider-arrows">
-						<a href="#" id="slider-arrow-left" class="slider-arrow-left">
-							<img src="assets/images/arrow-left.png" alt="arrow left" width="16" height="27">
-						</a>
-						<a href="#" id="slider-arrow-right" class="slider-arrow-right">
-							<img src="assets/images/arrow-right.png" alt="arrow right" width="16" height="27">
-						</a>
-					</div>
-					<div class="slider-content">
+					<a href="#" id="slider-arrow-left" class="slider-arrows slider-arrow-left">
+						<img src="assets/images/arrow-left.png" alt="arrow left" width="16" height="27">
+					</a>
+					<div class="slider-content show">
 						<div id="slider-content__item--vertical" class="slider-content__item">
 							<img class="slider-content__img" src="assets/images/phone-vertical.png" alt="phone vertical" width="240" height="483">
-							<img class="slider-content__img slider-content__img--dark hide" src="assets/images/phone-vertical-dark.png" alt="phone vertical" width="240" height="483">
 						</div>
 						<div id="slider-content__item--horizontal" class="slider-content__item">
 							<img class="slider-content__img" src="assets/images/phone-horizontal.png" alt="phone horizontal" width="484" height="240">
-							<img class="slider-content__img slider-content__img--dark hide" src="assets/images/phone-horizontal-dark.png" alt="phone horizontal" width="484" height="240">
 						</div>
 					</div>
-					<div class="slider-content slider-content--show">
+					<div class="slider-content hide">
 						<div id="slider-content__item--multi" class="slider-content__item">
 							<img class="slider-content__img" src="assets/images/slider-2.png" alt="phone slider" width="517" height="513">
-							<img class="slider-content__img slider-content__img--dark hide" src="assets/images/slider-2-dark.png" alt="phone slider" width="517" height="513">
 						</div>
 					</div>
+					<a href="#" id="slider-arrow-right" class="slider-arrows slider-arrow-right">
+						<img src="assets/images/arrow-right.png" alt="arrow right" width="16" height="27">
+					</a>
 				</div>				
 			</section>
 			<section id="services" class="services">
@@ -199,12 +194,22 @@
                 <div class="contact-wrapper">
                     <div class="contact-form-wrapper">
                         <form class="contact-form" action="index.html" method="get" target="_self">
-                            <input class="contact-form__input" type="text" required placeholder="Name (Required)">
-                            <input class="contact-form__input" type="email" required placeholder="Email (Required)">
-                            <input class="contact-form__input" type="text" placeholder="Subject">
+                            <input id="name" class="contact-form__input" type="text" required placeholder="Name (Required)">
+                            <input id="email" class="contact-form__input" type="email" required placeholder="Email (Required)">
+                            <input id="subject" class="contact-form__input" type="text" placeholder="Subject">
                             <textarea class="contact-form__input contact-form__input--textarea" placeholder="Describe your project in detail..."></textarea>
-                            <button class="contact-form__submit" type="submit">SEND</button>
-                        </form>
+                            <button id="submit" class="contact-form__submit" type="submit">SEND</button>
+						</form>
+						<!-- <div id="message-block" class="hide">
+							<div id="message">
+								<h5>The letter was sent</h5>
+								<p id="message-subject"></p>
+								<p id="message-description"></p>
+								<button class="close-button" id="close-button">OK</button>
+								</div>
+							</div>
+						</div> -->
+						</div>
                     </div>
                     <div class="contact-info-wrapper">
                         <h4 class="contact-info__title">Contact Information</h4>
