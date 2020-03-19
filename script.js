@@ -116,11 +116,27 @@ GALLERY.addEventListener('click', (event) => {
 	event.target.classList.add('portfolio-examples__photo--selected');
 });
 
-// portfolio click-to-change images
-
 const SWITCH_GALLERY = document.querySelector('.portfolio-nav');
+let GALLERY_NODE = document.querySelector('.portfolio-examples');
 
 SWITCH_GALLERY.addEventListener('click', (event) => {
 	SWITCH_GALLERY.querySelectorAll('.portfolio-nav__button__text').forEach(el => el.classList.remove('portfolio-nav__button__text--selected'));
 	event.target.classList.add('portfolio-nav__button__text--selected');
+	shuffleImages(GALLERY_NODE);	
 });
+
+// portfolio click-to-change images
+
+GALLERY.addEventListener('click', (event) => {
+	GALLERY.querySelectorAll('.portfolio-examples__photo').forEach(el => el.classList.remove('portfolio-examples__photo--selected'));
+	event.target.classList.add('portfolio-examples__photo--selected');
+});
+
+// portfolio shuffle images 
+
+function shuffleImages(GALLERY_NODE) {
+	for (let i = GALLERY_NODE.children.length; i >= 0; i--) {
+		GALLERY_NODE.appendChild(GALLERY_NODE.children[Math.random() * i | 0]);	
+	}
+	return GALLERY_NODE;
+}
