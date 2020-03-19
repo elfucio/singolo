@@ -21,32 +21,35 @@ MENU.addEventListener('click', (event) => {
 // change slides
 
 const sliderItems = document.querySelectorAll('.slider-content');
+let currentItem = 1;
 
 const sliderArrows = document.querySelectorAll('.slider-arrows');
 const next = document.getElementById('slider-arrow-right');
 const previous = document.getElementById('slider-arrow-left');
 
+function previousItem() {
+	changeCurrentItem(currentItem - 1);
+}
+
+function nextItem() {
+	changeCurrentItem(currentItem + 1);
+}
 
 next.addEventListener('click', function() {
-	changeSlide(sliderItems);
+	nextItem();
 	changeBackground();
 });
 
 previous.addEventListener('click', function() {
-	changeSlide();
+	previousItem();
 	changeBackground();
 });
 
-function changeSlide(sliderItems) {
-	if (sliderItems.classList.contains('show')) {
-		sliderItems.classList.remove('show');
-		sliderItems.classList.add('hide');
-	} else if (sliderItems.classList.contains('hide')){
-		sliderItems.classList.remove('hide');
-		sliderItems.classList.add('show');
-	}
+function changeCurrentItem(n) {
+	sliderItems[currentItem].classList = 'slider-content';
+    currentItem = (n + sliderItems.length) % sliderItems.length;
+    sliderItems[currentItem].classList = 'slider-content--show';
 }
-
 
 // change slider background
 
