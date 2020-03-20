@@ -131,3 +131,72 @@ function shuffleImages(GALLERY_NODE) {
 	}
 	return GALLERY_NODE;
 }
+
+// ======================================================================================== form validation
+
+const BUTTON_SUBMIT = document.getElementById('submit-button');
+const BUTTON_CLOSE = document.getElementById('close-button');
+const BUTTON_INVALID = document.getElementById('close-button-invalid');
+
+BUTTON_SUBMIT.addEventListener('click', (event) => {
+	event.preventDefault();
+	let name = document.getElementById('name').value.toString();
+	let email = document.getElementById('email').value.toString();
+	let subject = document.getElementById('subject').value.toString();
+	if (subject == '') {
+		subject = 'No subject';
+	} else {
+		subject = `Subject: ${subject}`;
+	}
+	let description = document.getElementById('description').value.toString();
+	if (description == '') {
+		description = 'No description';
+	} else {
+		description = `Description: ${description}`;
+	}
+	let message = document.getElementById('message');
+	let messageInvalid = document.getElementById('message-invalid');
+  
+	if ((name !== '') && email.includes('@')) {
+		document.getElementById('message-block').classList.remove('hide');
+		messageInvalid.innerText = '';
+	  	message.innerText = `
+		The letter was sent
+		${(subject !== '') ? subject : 'No subject'}
+		${(description !== '') ? description : 'No description'}
+		`;
+		
+	} else if (name == '') {
+		document.getElementById('message-block').classList.remove('hide');
+		messageInvalid.innerText = 'Enter your name!';	
+		
+	} else if (email == '') {
+		document.getElementById('message-block').classList.remove('hide');
+		messageInvalid.innerText = 'Enter your email';	
+		
+	} else if (!email.includes('@')) {
+		document.getElementById('message-block').classList.remove('hide');
+		messageInvalid.innerText = 'Email should contain @ symbol!';	
+	} 
+  });  
+  
+// clear form after submitting
+
+let FORM = document.getElementById('form');
+let inputs = FORM.querySelectorAll('.contact-form__input');
+
+function resetInput(items) {
+	for (let i = 0; i < items.length; i++) {
+		items[i].value = '';
+	}
+	return items;
+}
+
+BUTTON_CLOSE.addEventListener('click', () => {
+	document.getElementById('message-block').classList.add('hide');
+	resetInput(inputs);
+});
+
+BUTTON_INVALID.addEventListener('click', () => {
+	document.getElementById('message-block').classList.add('hide');
+});	

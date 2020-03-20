@@ -196,15 +196,24 @@
                 <p class="contact__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="contact-wrapper">
                     <div class="contact-form-wrapper">
-                        <form class="contact-form" action="index.html" method="get" target="_self">
-                            <input class="contact-form__input" type="text" required placeholder="Name (Required)">
-                            <input class="contact-form__input" type="email" required placeholder="Email (Required)">
-                            <input class="contact-form__input" type="text" placeholder="Subject">
-                            <textarea class="contact-form__input contact-form__input--textarea" placeholder="Describe your project in detail..."></textarea>
-                            <button class="contact-form__submit" type="submit">SEND</button>
-                        </form>
+                        <form id="form" class="contact-form">
+                            <input id="name" class="contact-form__input" type="text" required placeholder="Name (Required)">
+                            <input id="email" class="contact-form__input" type="email" required placeholder="Email (Required)">
+                            <input id="subject" class="contact-form__input" type="text" placeholder="Subject">
+                            <textarea id="description" class="contact-form__input contact-form__input--textarea" placeholder="Describe your project in detail..."></textarea>
+                            <button id="submit-button" class="contact-form__button" type="submit">SEND</button>
+						</form>
+						<div id="message-block" class="hide">
+							<div id="message"></div>
+							<div id="message-invalid"></div>
+							<button id="close-button" class="contact-form__button">OK</button>
+						</div>
+						<div id="message-block-invalid" class="hide">
+							<div id="message-invalid"></div>
+							<button id="close-button-invalid" class="contact-form__button">OK</button>
+						</div>
                     </div>
-                    <div class="contact-info-wrapper">
+                    <div class="contact-info-wrapper"></button>
                         <h4 class="contact-info__title">Contact Information</h4>
                         <p class="contact-info__text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
                         <div class="contact-info__links">
