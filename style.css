@@ -742,21 +742,14 @@ a {
   left: 50%;
   background: rgba(45, 48, 58, 0.568);
   overflow: hidden;
+  padding: 10px;
 }
 
-#message {
+.message-text {
   text-align: center;
   color: #2D303A;
   font-family: 'Lato Regular', Arial, sans-serif;
   font-size: 26px;
-}
-
-#message-invalid {
-  padding-top: 50px;
-  text-align: center;
-  color: rgb(10, 5, 5);
-  font-family: 'Lato Regular', Arial, sans-serif;
-  font-size: 36px;
 }
 
 #close-button {

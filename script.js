@@ -136,12 +136,12 @@ function shuffleImages(GALLERY_NODE) {
 
 const BUTTON_SUBMIT = document.getElementById('submit-button');
 const BUTTON_CLOSE = document.getElementById('close-button');
-const BUTTON_INVALID = document.getElementById('close-button-invalid');
+let FORM = document.getElementById('form');
+let MESSAGE = document.getElementById('message-block');
 
-BUTTON_SUBMIT.addEventListener('click', (event) => {
+FORM.addEventListener('submit', (event) => {
 	event.preventDefault();
-	let name = document.getElementById('name').value.toString();
-	let email = document.getElementById('email').value.toString();
+	MESSAGE.classList.remove('hide');
 	let subject = document.getElementById('subject').value.toString();
 	if (subject == '') {
 		subject = 'No subject';
@@ -154,49 +154,11 @@ BUTTON_SUBMIT.addEventListener('click', (event) => {
 	} else {
 		description = `Description: ${description}`;
 	}
-	let message = document.getElementById('message');
-	let messageInvalid = document.getElementById('message-invalid');
-  
-	if ((name !== '') && email.includes('@')) {
-		document.getElementById('message-block').classList.remove('hide');
-		messageInvalid.innerText = '';
-	  	message.innerText = `
-		The letter was sent
-		${(subject !== '') ? subject : 'No subject'}
-		${(description !== '') ? description : 'No description'}
-		`;
-		
-	} else if (name == '') {
-		document.getElementById('message-block').classList.remove('hide');
-		messageInvalid.innerText = 'Enter your name!';	
-		
-	} else if (email == '') {
-		document.getElementById('message-block').classList.remove('hide');
-		messageInvalid.innerText = 'Enter your email';	
-		
-	} else if (!email.includes('@')) {
-		document.getElementById('message-block').classList.remove('hide');
-		messageInvalid.innerText = 'Email should contain @ symbol!';	
-	} 
-  });  
-  
-// clear form after submitting
-
-let FORM = document.getElementById('form');
-let inputs = FORM.querySelectorAll('.contact-form__input');
-
-function resetInput(items) {
-	for (let i = 0; i < items.length; i++) {
-		items[i].value = '';
-	}
-	return items;
-}
+	document.getElementById('message-subject').innerText = subject;
+	document.getElementById('message-description').innerText = description;
+});  
 
 BUTTON_CLOSE.addEventListener('click', () => {
-	document.getElementById('message-block').classList.add('hide');
-	resetInput(inputs);
+document.getElementById('message-block').classList.add('hide');
+form.reset();
 });
-
-BUTTON_INVALID.addEventListener('click', () => {
-	document.getElementById('message-block').classList.add('hide');
-});	
