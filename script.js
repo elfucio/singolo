@@ -37,48 +37,70 @@ function onScroll(event) {
 	});
 }
 
-// change slides
+// ======================================================================================== change slides
 
-const sliderItems = document.querySelectorAll('.slider-content');
-let currentItem = 1;
+let items = document.querySelectorAll('.slider-content');
+let currentSlide = 0;
+let isEnabled = true;
 
-const sliderArrows = document.querySelectorAll('.slider-arrow');
-const next = document.getElementById('slider-arrow-right');
-const previous = document.getElementById('slider-arrow-left');
-
-function previousItem() {
-	changeCurrentItem(currentItem - 1);
+function changeCurrentSlide(n) {
+	currentSlide = (n + items.length) % items.length;
 }
 
-function nextItem() {
-	changeCurrentItem(currentItem + 1);
+function hideSlide(direction) {
+	isEnabled = false;
+	items[currentSlide].classList.add(direction);
+	items[currentSlide].addEventListener('animationend', function() {
+		this.classList.remove('slider-content-active', direction);
+	});
 }
 
-next.addEventListener('click', function() {
-	nextItem();
+function showSlide(direction) {
+	items[currentSlide].classList.add('slider-content-next', direction);
+	items[currentSlide].addEventListener('animationend', function() {
+		this.classList.remove('slider-content-next', direction);
+		this.classList.add('slider-content-active');
+		isEnabled = true;
+	});
+}
+
+function previousSlide(n) {
+	hideSlide('to-right');
+	changeCurrentSlide(n - 1);
+	showSlide('from-left');
 	changeBackground();
+}
+
+function nextSlide(n) {
+	hideSlide('to-left');
+	changeCurrentSlide(n + 1);
+	showSlide('from-right');
+	changeBackground();
+}
+
+document.querySelector('#slider-arrow-left').addEventListener('click', function() {
+	if (isEnabled) {
+		previousSlide(currentSlide);
+	}
 });
 
-previous.addEventListener('click', function() {
-	previousItem();
-	changeBackground();
+document.querySelector('#slider-arrow-right').addEventListener('click', function() {
+	if (isEnabled) {
+		nextSlide(currentSlide);	
+	}
 });
 
-function changeCurrentItem(n) {
-	sliderItems[currentItem].classList = 'slider-content';
-    currentItem = (n + sliderItems.length) % sliderItems.length;
-    sliderItems[currentItem].classList = 'hide';
-}
+//  change slider background
 
-// ======================================================================================== change slider background
+let SLIDER = document.querySelector('.slider');
 
 function changeBackground() {
-	if (slider.classList.contains('bg-red')) {
-		slider.classList.remove('bg-red');
-		slider.classList.add('bg-blue');
-	} else if (slider.classList.contains('bg-blue')){
-		slider.classList.remove('bg-blue');
-		slider.classList.add('bg-red');
+	if (SLIDER.classList.contains('bg-red')) {
+		SLIDER.classList.remove('bg-red');
+		SLIDER.classList.add('bg-blue');
+	} else if (SLIDER.classList.contains('bg-blue')){
+		SLIDER.classList.remove('bg-blue');
+		SLIDER.classList.add('bg-red');
 	}
 }
 

@@ -198,7 +198,6 @@ a {
   width: 1020px;
 }
 
-
 .slider {
   padding: 0 40px;
   height: 600px;
@@ -219,50 +218,117 @@ a {
 
 .slider-wrapper {
   height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.slider-content-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
+  margin: 0 auto;
 }
 
 .slider-arrow {
   transform: scale(1);
   position: absolute;
   align-self: center;
-  top: 47%;
+  bottom: 47.5%;
+  z-index: 4;
 }
 
-.slider-arrow:first-child {
-  left: 0;
+#slider-arrow-left {
+  left: 4%;
+  right: auto;
 }
 
-.slider-arrow:last-child {
-  right: 0;
+#slider-arrow-right {
+  right: 4%;
+  left: auto;
 }
 
-.slider-arrow:hover,
 .slider-arrow:hover {
   transform: scale(1.2);
   transition: all 0.2s ease-out;
 }
 
-.slider-arrow:active,
 .slider-arrow:active {
   transform: scale(0.8);
   transition: all 0.2s ease-out;
 }
 
 .slider-content {
-  display: flex;
+  display: none;
+  width: 100%;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  animation: 0.5s ease-in-out;
+  margin: 0 auto;
 }
 
-.slider-content--show {
+.slider-content-next {
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
-  transition: opacity 1s;
+  position: absolute;
+  transition: all ease 1s;
+  margin: 0 auto;
+}
+
+.slider-content-active {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  transition: all ease 1s;
+  margin: 0 auto;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 .slider-content__item {
