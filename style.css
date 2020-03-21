@@ -192,11 +192,12 @@ a {
   color: #F06C64;
 }
 
-/* .header--sticky {
-  position: sticky;
+.sticky {
+  position: fixed;
   top: 0;
   width: 1020px;
-} */
+}
+
 
 .slider {
   padding: 0 40px;

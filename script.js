@@ -1,13 +1,41 @@
 // ======================================================================================== sticky header
 
-window.addEventListener('scroll', function() {
-	if (header.offsetTop > 0) {
-		document.querySelector('.header').classList.add('header--sticky');
-	} else {
-		document.querySelector('.header').classList.remove('header--sticky');
-	}
-});
+// When the user scrolls the page, execute getStickyHeader
+window.addEventListener('scroll', getStickyHeader);
 
+// Get the header
+let header = document.getElementById('header');
+
+// Get the offset position of the navbar
+let sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function getStickyHeader() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+}
+// ======================================================================================== active menu
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+	const currentPosition = window.scrollY;
+	const sections = document.querySelectorAll('section');
+	const links = document.querySelectorAll('.header-navigation a');
+
+	sections.forEach((item) => {
+		if (item.offsetTop - 95 <= currentPosition && (item.offsetTop + item.offsetHeight) > currentPosition) {
+			links.forEach((a) => {
+				a.classList.remove('header-navigation__item--selected');
+				if (item.getAttribute('id') === a.getAttribute('href').substring(1)) {
+					a.classList.add('header-navigation__item--selected');
+				}
+			});
+		}
+	});
+}
 // ======================================================================================== active menu links
 
 const MENU = document.querySelector('header');
