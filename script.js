@@ -36,14 +36,6 @@ function onScroll(event) {
 		}
 	});
 }
-// ======================================================================================== active menu links
-
-const MENU = document.querySelector('header');
-
-MENU.addEventListener('click', (event) => {
-	MENU.querySelectorAll('.header-navigation__item__link').forEach(el => el.classList.remove('header-navigation__item--selected'));
-	event.target.classList.add('header-navigation__item--selected');
-});
 
 // change slides
 
@@ -127,7 +119,7 @@ function changeScreen(items) {
 
 // ======================================================================================== portfolio active images
 
-const GALLERY = document.querySelector('.portfolio-examples');
+let GALLERY = document.querySelector('.portfolio-examples');
 
 GALLERY.addEventListener('click', (event) => {
 	GALLERY.querySelectorAll('.portfolio-examples__photo').forEach(el => el.classList.remove('portfolio-examples__photo--selected'));
@@ -136,28 +128,28 @@ GALLERY.addEventListener('click', (event) => {
 
 const SWITCH_GALLERY = document.querySelector('.portfolio-nav');
 
-
 SWITCH_GALLERY.addEventListener('click', (event) => {
-	SWITCH_GALLERY.querySelectorAll('.portfolio-nav__button__text').forEach(el => el.classList.remove('portfolio-nav__button__text--selected'));
-	event.target.classList.add('portfolio-nav__button__text--selected');
-	shuffleImages(GALLERY_NODE);	
+	if (event.target.classList.contains('portfolio-nav__button')) {
+		SWITCH_GALLERY.querySelectorAll('.portfolio-nav__button').forEach(el => el.classList.remove('portfolio-nav__button--selected'));
+		event.target.classList.add('portfolio-nav__button--selected');
+		shuffleImages(GALLERY);
+	} else {event.target.preventDefault();}	
 });
 
 // ======================================================================================== portfolio click-to-change images
 
 GALLERY.addEventListener('click', (event) => {
-	GALLERY.querySelectorAll('.portfolio-examples__photo').forEach(el => el.classList.remove('portfolio-examples__photo--selected'));
-	event.target.classList.add('portfolio-examples__photo--selected');
+		GALLERY.querySelectorAll('.portfolio-examples__photo').forEach(el => el.classList.remove('portfolio-examples__photo--selected'));
+		event.target.classList.add('portfolio-examples__photo--selected');
 });
 
 // ======================================================================================== portfolio shuffle images 
-let GALLERY_NODE = document.querySelector('.portfolio-examples');
 
-function shuffleImages(GALLERY_NODE) {
-	for (let i = GALLERY_NODE.children.length; i >= 0; i--) {
-		GALLERY_NODE.appendChild(GALLERY_NODE.children[Math.random() * i | 0]);	
+function shuffleImages(GALLERY) {
+	for (let i = GALLERY.children.length; i >= 0; i--) {
+		GALLERY.appendChild(GALLERY.children[Math.random() * i | 0]);	
 	}
-	return GALLERY_NODE;
+	return GALLERY;
 }
 
 // ======================================================================================== form validation
