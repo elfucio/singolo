@@ -393,6 +393,8 @@ a {
 
 .services-icons__info {
   margin-top: -10px;
+  max-height: 300px;
+  overflow: hidden;
 }
 
 .services-icons__info__title {
@@ -539,7 +541,9 @@ a {
 	justify-content: space-between;
 }
 .about-us-people__item {
-	width: 300px;
+  max-height: 443px;
+  width: 300px;
+  overflow: hidden;
 }
 .about-us-people__item__userpic {
 	margin-bottom: 13px;
@@ -553,6 +557,7 @@ a {
 	margin-bottom: 9px;
 }
 .about-us-people__item__text {
+  max-height: 42px;
   font-family: 'Lato Bold', Arial, sans-serif;
   color: #767e9e;
   font-size: 12px;
@@ -560,6 +565,7 @@ a {
   line-height: 21px;
   letter-spacing: -0.2px;
   margin-bottom: 23px;
+  overflow: hidden;
 }
 .about-us-people__item__social {
 	height: 33px;
@@ -635,7 +641,7 @@ a {
   outline: none;
   border: none;
   border-radius: 5px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   box-sizing: border-box;
 }
 
@@ -648,8 +654,9 @@ a {
 }
 
 .contact-form__input--textarea {
-  height: 202px;
+  height: 159px;
   padding-top: 13px;
+  resize: none;
 }
 
 .contact-form__input::placeholder {
@@ -669,8 +676,7 @@ a {
 }
 
 .contact-form__button {
-  margin: 0 auto;
-  width: 200px;
+  width: 136px;
   height: 38px;
   border: none;
   outline: none;
@@ -678,7 +684,7 @@ a {
   cursor: pointer;
   font-family: 'Lato Regular', Arial, sans-serif;
   font-size: 13px;
-  background-color: #F0D8D9;
+  background-color: #FBC65F;
 }
 
 .contact-form__button:hover {
