@@ -869,7 +869,7 @@ a {
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1019px) and (min-width: 768px) {
 
   .slider {
     height: 450px;
@@ -924,8 +924,7 @@ a {
   }
   
   .about-us-people__item__text {
-    height: auto;
-    overflow: unset;
+    overflow: initial;
     margin-bottom: 33px;
   }
 
@@ -979,12 +978,221 @@ a {
   }
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 767px) {
   .header {
-    padding: 0 10px;
+    height: 71px;
+    padding-top: 11px;
   }
 
+  .header-navigation {
+    display: none;
+  }
+  .header-logo {
+    font-size: 10px;
+    margin: 0 auto;
+  }
+
+  .header-logo__title {
+    margin-left: 16px;
+  }
+  .slider {
+    height: 220px;
+    padding: 0 20px;
+  }
+
+  .slider-wrapper {
+    top: 52%;
+  }
+
+  .slider-arrow {
+    bottom: 42.5%;
+  }
+
+  #slider-arrow-right {
+    right: 3%;
+  }
+  #slider-arrow-left {
+    left: 3%;
+  }
+
+  .services {
+    padding: 25px 30px 0 30px;
+  }
+
+  .services__title {
+    line-height: 42px;
+  }
+
+  .services__text {
+    text-align: left;
+    padding-top: 14px;
+    letter-spacing: 0.6px;
+    line-height: 30px;
+  }
   .services-icons {
-    justify-content: space-around;
+    width: 96%;
+    padding-top: 30px;
+    justify-content: center;
+  }
+
+  .services-icons__item {
+    margin-bottom: 33px;
+  }
+
+  .services-icons:last-child {
+    margin-bottom: -8px;
+  }
+
+  .portfolio {
+    padding: 50px 30px 36px 30px;
+  }
+
+  .portfolio-header__title {
+    font-size: 28px;
+  }
+  
+  .portfolio-header__text {
+    line-height: 30px;
+  }
+
+  .portfolio-nav {
+    margin-top: 15px;
+    flex-wrap: nowrap;
+    justify-content: baseline;
+  }
+
+  .portfolio-examples {
+    grid-template-columns: auto auto;
+    margin-top: 7px;
+    grid-gap: 13px;
+  }
+
+  .portfolio-examples div:nth-child(n + 9) {
+    display: none;
+  }
+
+  .portfolio-header__text {
+    width: 93%;
+  }
+
+  .about-us {
+    height: 100%;
+    padding: 52px 30px 0 30px;
+    }
+
+  .about-us-people {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-us__text {
+    letter-spacing: 0.2px;
+    text-align: initial;
+    line-height: 30px;
+  }
+
+  .about-us-people__item {
+    margin-bottom: 32px;
+  }
+
+  .about-us-people:last-child {
+    margin-bottom: -6px;
+  }
+  .about-us-people__item__userpic {
+    margin-bottom: 8px;  
+  }
+
+  .about-us-people__item__name {
+    margin-top: 6px;
+    margin-bottom: 2px;
+  }
+  
+  .about-us-people__item__text {
+
+    margin-bottom: 12px;
+  }
+
+  .contact {
+    padding: 52px 30px 32px 30px;
+  }
+
+  .contact__text {
+    letter-spacing: 0.1px;
+    text-align: initial;
+  }
+
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form-wrapper {
+    width: 100%;
+  }
+  .contact-form {
+    padding-top: 19px;
+  }
+
+  .contact-form__input {
+    padding-left: 5px;
+    margin-bottom: 10px;
+  }
+
+  .contact-form__input--textarea {
+    padding-left: 7px;
+    padding-top: 9px;
+    margin-bottom: 12px;
+  }
+
+  .contact-form__button {
+    width: 100%;
+    height: 50px;
+  }
+
+  .contact-info-wrapper {
+    padding-top: 30px;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .contact-info__title {
+    font-size: 20px;
+    letter-spacing: -1.3px;
+  }
+
+  .contact-info__text {
+    padding-top: 0px;
+    line-height: 22.5px;
+    letter-spacing: 0;
+  }
+
+  .contact-info__links {
+    padding-top: 12px;
+    padding-left: 24px;
+    line-height: 25px;
+  }
+  
+  .footer {
+    padding: 22px 0;
+  }
+
+  .footer__social-icons {
+    margin: 0 auto;
+  }
+
+  .footer__copyright {
+    display: none;
+  }
+
+  #message-block {
+    width: 75%;
+    height: 75%;
+    bottom: 20%;
+    left: 15%;
+  } 
+
+  #close-button {
+    width: 60%;
   }
 }
