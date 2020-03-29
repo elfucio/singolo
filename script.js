@@ -9,7 +9,7 @@ let header = document.getElementById('header');
 // Get the offset position of the navbar
 let sticky = header.offsetTop;
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+// Add the sticky class to the header when you reach its scroll position. Remove 'sticky' when you leave the scroll position
 function getStickyHeader() {
   if (window.pageYOffset > sticky) {
     header.classList.add('sticky');
@@ -204,3 +204,27 @@ BUTTON_CLOSE.addEventListener('click', () => {
 document.getElementById('message-block').classList.add('hide');
 form.reset();
 });
+
+  // ======================================================================================== burger menu
+const BURGER = document.querySelector('#navToggle');
+const NAV_TOGGLE = document.querySelector('#navToggle');
+const OVERLAY = document.querySelector('.overlay');
+
+BURGER.addEventListener('click', () => {
+	if (NAV_TOGGLE.classList.contains('active') && OVERLAY.classList.contains('open')) {
+		OVERLAY.classList.remove('open');
+		NAV_TOGGLE.classList.remove('active');
+		document.querySelector('.header-logo').classList.remove('header-logo--active');
+	}
+	 else {
+		document.querySelector('.header-logo').classList.add('header-logo--active');
+		NAV_TOGGLE.classList.add('active');
+		OVERLAY.classList.add('open');
+	 }
+});
+
+OVERLAY.addEventListener('click', () => {
+	document.querySelector('.overlay').classList.remove('open');
+	document.querySelector('.navBurger').classList.remove('active');
+	document.querySelector('.header-logo').classList.remove('.header-logo--active');
+  });
