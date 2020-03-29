@@ -1196,3 +1196,17 @@ a {
     width: 60%;
   }
 }
+
+@media only screen and (max-width: 370px) {
+  .services-icons__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .portfolio-nav {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
