@@ -191,7 +191,7 @@ a {
   color: #F06C64;
 }
 
-.sticky {
+/* .sticky {
   position: fixed;
   top: 0;
   max-width: 1020px;
@@ -203,7 +203,7 @@ a {
   display: flex;
   justify-content: space-between;
   z-index: 6;
-}
+} */
 
 .slider {
   padding: 0 40px;
@@ -239,7 +239,7 @@ a {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  width: 100%;
+  width: 175vh;
 }
 
 .slider-arrow {
@@ -872,7 +872,11 @@ a {
 @media only screen and (max-width: 1019px) and (min-width: 768px) {
 
   .slider {
-    height: 450px;
+    max-height: 450px;
+  }
+
+  .slider-content-wrapper {
+    max-width: 159vh;
   }
 
   .slider-arrow {
@@ -920,12 +924,13 @@ a {
   }
 
   .about-us-people__item__name {
-    margin-bottom: 1px;
+    margin-bottom: 2px;
   }
   
   .about-us-people__item__text {
     overflow: initial;
-    margin-bottom: 33px;
+    margin-bottom: 32px;
+    line-height: 22px;
   }
 
   .contact {
@@ -1004,13 +1009,19 @@ a {
   .header-navigation__list {
     width: initial;
   }
+
   .slider {
-    height: 220px;
+    max-height: 220px;
+    /* height: 220px; */
     padding: 0 20px;
   }
 
   .slider-wrapper {
     top: 52%;
+  }
+
+  .slider-content-wrapper {
+    max-width: 79vh;
   }
 
   .slider-arrow {
@@ -1057,7 +1068,7 @@ a {
   }
 
   .portfolio-header__title {
-    font-size: 28px;
+    font-size: 29px;
   }
   
   .portfolio-header__text {
@@ -1081,7 +1092,7 @@ a {
   }
 
   .portfolio-header__text {
-    width: 93%;
+    width: 98%;
   }
 
   .about-us {
