@@ -8,47 +8,66 @@
     <title>Singolo</title>
 </head>
 <body>
-	<div class="container">
-		<header class="header">
+	<div id="container" class="container">
+		<header id="header" class="header">
 			<div class="wrapper-header">
 				<div class="header-logo">
-						<h1 class="header-logo__title"><a href="#">Singolo<span>*</span></a></h1>
+						<h1 class="header-logo__title"><a href="#header">Singolo<span>*</span></a></h1>
 				</div>
-				<nav class="header-navigation">
-					<ul class="header-navigation__list">
-						<li class="header-navigation__item header-navigation__item--selected"><a href="#">Home</a></li>
-						<li class="header-navigation__item--dot"><span>&#183;</span></li>
-						<li class="header-navigation__item"><a href="#">Services</a></li>
-						<li class="header-navigation__item--dot"><span>&#183;</span></li>
-						<li class="header-navigation__item"><a href="#">Portfolio</a></li>
-						<li class="header-navigation__item--dot"><span>&#183;</span></li>
-						<li class="header-navigation__item"><a href="#">About</a></li>
-						<li class="header-navigation__item--dot"><span>&#183;</span></li>
-						<li class="header-navigation__item"><a href="#">Contact</a></li>
-					</ul>
-				</nav>
+				<div class="menu-wrapper-burger overlay">	
+					<nav class="header-navigation overlayMenu">
+						<ul class="header-navigation__list">
+							<li class="header-navigation__item"><a class="header-navigation__item__link header-navigation__item--selected" href="#slider">Home</a></li>
+							<li class="header-navigation__item--dot"><span>&#183;</span></li>
+							<li class="header-navigation__item"><a class="header-navigation__item__link" href="#services">Services</a></li>
+							<li class="header-navigation__item--dot"><span>&#183;</span></li>
+							<li class="header-navigation__item"><a class="header-navigation__item__link" href="#portfolio">Portfolio</a></li>
+							<li class="header-navigation__item--dot"><span>&#183;</span></li>
+							<li class="header-navigation__item"><a class="header-navigation__item__link" href="#about">About</a></li>
+							<li class="header-navigation__item--dot"><span>&#183;</span></li>
+							<li class="header-navigation__item"><a class="header-navigation__item__link" href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
+			<div class="navBurger" role="navigation" id="navToggle">
+				<span></span>
+			</div> 
 		</header>
-		<main>
-			<section class="slider">
+		<main class="main">
+			<section id="slider" class="slider bg-red">
+				<h2 class="hide">.</h2>
 				<div class="slider-wrapper">
-					<a href="#" class="slider-arrow-left">
+					<a href="#" id="slider-arrow-left" class="slider-arrow">
 						<img src="assets/images/arrow-left.png" alt="arrow left" width="16" height="27">
 					</a>
-						<div class="slider-content">
-							<div class="slider-content__item">
-								<img src="assets/images/phone-vertical.png" alt="phone vertical" width="240" height="483">
-							</div>
-							<div class="slider-content__item">
-								<img src="assets/images/phone-horizontal.png" alt="phone horizontal" width="484" height="240">
+					<div class="slider-content slider-content-active">
+					<div class="slider-content-wrapper">
+						<div id="vertical" class="slider-content__item">
+							<img class="slider-content__img" src="assets/images/phone-vertical.png" alt="phone vertical" width="240" height="483">
+							<img class="hide" src="assets/images/phone-vertical-dark.png" alt="phone vertical" width="240" height="483">
+						</div>
+						<div id="horizontal" class="slider-content__item">
+							<img class="slider-content__img" src="assets/images/phone-horizontal.png" alt="phone horizontal" width="484" height="240">
+							<img class="hide" src="assets/images/phone-horizontal-dark.png" alt="phone horizontal" width="484" height="240">
+						</div>
+					</div>
+					</div>
+					<div class="slider-content">
+						<div class="slider-content-wrapper">
+							<div id="multi" class="slider-content__item">
+								<img class="slider-content__img" src="assets/images/slider-2.png" alt="phone slider" width="517" height="513">
+								<img class="hide" src="assets/images/slider-2-dark.png" alt="phone slider" width="517" height="513">
 							</div>
 						</div>
-					<a href="#" class="slider-arrow-right">
+						</div>
+
+					<a href="#" id="slider-arrow-right" class="slider-arrow">
 						<img src="assets/images/arrow-right.png" alt="arrow right" width="16" height="27">
 					</a>
 				</div>				
 			</section>
-			<section class="services">
+			<section id="services" class="services">
 				<div class="services-wrapper">
 					<h2 class="services__title">Our Services</h2>
 					<p class="services__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -94,7 +113,7 @@
 								<img src="assets/images/message.png" alt="message" width="59" height="59">
 							</div>
 							<div class="services-icons__info">
-								<p class="services-icons__info__title">24/7 Support</p>
+								<p class="services-icons__info__title">24 / 7 Support</p>
 								<p class="services-icons__info__text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
 							</div>
 						</div>
@@ -110,46 +129,38 @@
 					</div>
 				</div>
             </section>
-            <section class="portfolio">
+            <section id="portfolio" class="portfolio">
 				<div class="portfolio-header">
 				  <h2 class="portfolio-header__title">Portfolio</h2>
 				  <p class="portfolio-header__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 				</div>
-				<div class="portfolio-nav">
-					<a href="#" class="portfolio-nav__button">
-					  <span class="portfolio-nav__button__text">All </span>
-					</a>
-					<a href="#" class="portfolio-nav__button">
-					  <span class="portfolio-nav__button__text">Web Design</span>
-					</a>
-					<a href="#" class="portfolio-nav__button">
-					  <span class="portfolio-nav__button__text">Graphic Design</span>
-					</a>
-					<a href="#" class="portfolio-nav__button">
-					  <span class="portfolio-nav__button__text">Artwork</span>
-					</a>
+				<div id="portfolio-nav"	class="portfolio-nav">
+					<button class="portfolio-nav__button">All</button>
+					<button class="portfolio-nav__button">Web Design</button>
+					<button class="portfolio-nav__button">Graphic Design</button>
+					<button class="portfolio-nav__button">Artwork</button>
 				</div>
 				<div class="portfolio-examples">
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic1.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic2.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic3.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic4.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic5.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic6.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic7.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic8.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic9.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic10.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic11.png" alt="picture" width="220" height="187"></div>
-					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic12.png" alt="picture" width="220" height="187"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic1.png" alt="picture" width="220" height="187" data-number="1"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic2.png" alt="picture" width="220" height="187" data-number="2"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic3.png" alt="picture" width="220" height="187" data-number="3"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic4.png" alt="picture" width="220" height="187" data-number="4"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic5.png" alt="picture" width="220" height="187" data-number="5"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic6.png" alt="picture" width="220" height="187" data-number="6"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic7.png" alt="picture" width="220" height="187" data-number="7"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic8.png" alt="picture" width="220" height="187" data-number="8"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic9.png" alt="picture" width="220" height="187" data-number="9"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic10.png" alt="picture" width="220" height="187" data-number="10"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic11.png" alt="picture" width="220" height="187" data-number="11"></div>
+					<div class="pic-wrapper"><img class="portfolio-examples__photo" src="assets/images/pic12.png" alt="picture" width="220" height="187" data-number="12"></div>
 				</div>
 			  </section>
-			  <section class="about-us">
+			  <section id="about" class="about-us">
 				<h2 class="about-us__title">About Us</h2>
 				<p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
 				<div class="about-us-people">
 					<div class="about-us-people__item">
-						<img src="assets/images/photo1.png" alt="photo" class="about-us-people__item__userpic" width="300" height="300"">
+						<img src="assets/images/photo1.png" alt="photo" class="about-us-people__item__userpic" width="300" height="300">
 						<p class="about-us-people__item__name">Adam Jensen</p>
 						<p class="about-us-people__item__text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
 						<div class="about-us-people__item__social">
@@ -171,7 +182,7 @@
 						</div>
 					</div>
 					<div class="about-us-people__item">
-						<img src="assets/images/photo3.png" alt="photo" class="about-us-people__item__userpic" width="300" height="300"">
+						<img src="assets/images/photo3.png" alt="photo" class="about-us-people__item__userpic" width="300" height="300">
 						<p class="about-us-people__item__name">Scolara Visari</p>
 						<p class="about-us-people__item__text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
 						<div class="about-us-people__item__social">
@@ -183,25 +194,31 @@
 					</div>
 				</div>
             </section>
-            <section class="contact">
+            <section id="contact" class="contact">
                 <h2 class="contact__title">Get a Quote</h2>
                 <p class="contact__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="contact-wrapper">
                     <div class="contact-form-wrapper">
-                        <form class="contact-form" action="index.html" method="get" target="_self">
-                            <input class="contact-form__input" type="text" required placeholder="Name (Required)">
-                            <input class="contact-form__input" type="email" required placeholder="Email (Required)">
-                            <input class="contact-form__input" type="text" placeholder="Subject">
-                            <textarea class="contact-form__input contact-form__input--textarea" placeholder="Describe your project in detail..."></textarea>
-                            <button class="contact-form__submit" type="submit">SEND</button>
-                        </form>
+                        <form id="form" class="contact-form">
+                            <input id="name" class="contact-form__input" type="text" required placeholder="Name (Required)">
+                            <input id="email" class="contact-form__input" type="email" required placeholder="Email (Required)">
+                            <input id="subject" class="contact-form__input" type="text" placeholder="Subject">
+                            <textarea id="description" class="contact-form__input contact-form__input--textarea" placeholder="Describe your project in detail..."></textarea>
+                            <button id="submit-button" class="contact-form__button" type="submit">SEND</button>
+						</form>
+						<div id="message-block" class="hide">
+							<p id="message-heading" class="message-text">The letter was sent</p>
+							<p id="message-subject" class="message-text"></p>
+							<p id="message-description" class="message-text"></p>
+							<button id="close-button" class="contact-form__button">OK</button>
+						</div>
                     </div>
                     <div class="contact-info-wrapper">
                         <h4 class="contact-info__title">Contact Information</h4>
                         <p class="contact-info__text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
                         <div class="contact-info__links">
                             <span class="contact-info__links__item location">Elm St. 14/05 Lost City </span>
-                            <a class="contact-info__links__item call" href="tel:03528 331 86 35">03528 331 86 35</a>
+                            <a class="contact-info__links__item call" href="tel:035283318635">03528 331 86 35</a>
                             <a class="contact-info__links__item mail" href="mailto:info@singolo.com" target="_blank">info@singolo.com</a>
                         </div>
                     </div>
@@ -218,5 +235,6 @@
             </div>
         </footer>
 	</div>
+	<script src="script.js"></script>
 </body>
 </html>
